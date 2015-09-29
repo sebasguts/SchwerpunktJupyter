@@ -5,6 +5,7 @@ FROM sebasguts/sppdocker
 MAINTAINER Sebastian Gutsche <sebastian.gutsche@gmail.com>
 
 RUN    sudo ln -snf $(which python3) /usr/local/bin/python \
+    && sudo apt-get install -y python3-pip \
     && sudo pip3 install jupyter \
     && cd /home/spp \
     && mkdir jupyter_kernels \
