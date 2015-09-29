@@ -5,7 +5,8 @@ FROM sebasguts/sppdocker
 MAINTAINER Sebastian Gutsche <sebastian.gutsche@gmail.com>
 
 RUN    sudo ln -snf $(which python3) /usr/local/bin/python \
-    && && sudo ln -snf /usr/bin/gap /usr/bin/gap.sh \
+    && sudo bash -c "echo '#!/bin/sh' > /usr/bin/gap" \
+    && sudo bash -c "echo '/opt/gap4r7/bin/gap.sh -l \"/opt/gap4r7/local;/opt/gap4r7\" \"\$@\"' >> /usr/bin/gap" \
     && sudo apt-get install -y python3-pip \
     && sudo pip3 install jupyter \
     && cd /home/spp \
