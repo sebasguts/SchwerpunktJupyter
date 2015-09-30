@@ -10,11 +10,7 @@ RUN    sudo ln -snf $(which python3) /usr/bin/python \
     && sudo apt-get install -y python3-pip \
     && sudo pip3 install jupyter
 
-RUN    cd /tmp \
-    && echo 'Pkg.add("IJulia")' > julia_jupyter_install \
-    && julia julia_jupyter_install \
-    && rm julia_jupyter_install \
-    && cd /home/spp \
+RUN    cd /home/spp \
     && mkdir jupyter_kernels \
     && cd jupyter_kernels \
     && git clone https://github.com/gap-system/jupyter-gap.git \
