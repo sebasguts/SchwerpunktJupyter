@@ -31,4 +31,4 @@ RUN    cd /home/spp \
 
 EXPOSE 8888
 
-CMD /bin/bash -c "sudo ipython notebook --no-browser"
+CMD /bin/bash -c "sudo jupyter notebook --no-browser"
