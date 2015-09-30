@@ -9,6 +9,10 @@ RUN    sudo ln -snf $(which python3) /usr/local/bin/python \
     && sudo bash -c "echo '/opt/gap4r7/bin/gap.sh -l \"/opt/gap4r7/local;/opt/gap4r7\" \"\$@\"' >> /usr/bin/gap" \
     && sudo apt-get install -y python3-pip \
     && sudo pip3 install jupyter \
+    && cd /tmp \
+    && echo 'Pkg.add("IJulia")' > julia_jupyter_install \
+    && julia julia_jupyter_install \
+    && rm julia_jupyter_install \
     && cd /home/spp \
     && mkdir jupyter_kernels \
     && cd jupyter_kernels \
